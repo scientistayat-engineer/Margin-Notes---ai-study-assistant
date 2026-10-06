@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Margin Notes · AI Study Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head><body>
+<section id="login"><div class="theme theme-float" role="group" aria-label="Colour theme"><button data-v="auto" aria-pressed="true">Auto</button><button data-v="light" aria-pressed="false">Light</button><button data-v="dark" aria-pressed="false">Dark</button></div><div class="hero"><h1>Ask your Python notes, get <mark>answers with page numbers.</mark></h1>
+<div class="demo"><b>What is a tuple?</b><code>point = (3, 4)  # immutable</code><div class="src">Chapter 2 · p.7</div></div></div>
+<div class="form"><h2 id="ft">Log in</h2><label for="em">Email</label><input id="em" type="email" autocomplete="email">
+<label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password">
+<div class="err" id="err" role="alert"></div>
+<button class="pri" id="go">Log in</button><button id="gg">Continue with Google</button>
+<button class="sw" id="swap">New here? Create an account</button></div></section>
+
+<section id="app" class="hide"><aside><h1>Margin Notes</h1><div class="muted" id="who"></div><div class="theme" role="group" aria-label="Colour theme"><button data-v="auto" aria-pressed="true">Auto</button><button data-v="light" aria-pressed="false">Light</button><button data-v="dark" aria-pressed="false">Dark</button></div>
+<div class="tabs"><button class="tab pri" data-t="chat">Chat</button><button class="tab" data-t="quiz">Quiz</button><button class="tab" data-t="study">Study</button><button class="tab" data-t="insp">RAG Inspector</button></div>
+<div class="shelf" id="shelf"></div><div class="muted" id="cnt"></div>
+<input type="file" id="file" accept=".pdf" multiple class="hide"><button id="up">Upload up to 5 PDFs</button><button id="out">Log out</button></aside>
+<main>
+<div class="pane" id="p-chat"><div id="chat"><div class="msg welcome">Upload your Python chapters, then ask anything from them.</div><div class="sug" id="sug"></div></div>
+<div class="ask"><select id="lang" aria-label="Answer language"><option value="en">English</option><option value="roman">Roman Urdu</option><option value="ur">اردو</option></select>
+<button id="mic">Speak</button><input id="q" placeholder="e.g. Explain the difference between a list and a tuple" aria-label="Question"><button class="pri" id="send">Ask</button><button id="pdf">Export PDF</button></div></div>
+<div class="pane hide" id="p-quiz"><div class="pad"><h2>Quiz from your chapters</h2><button class="pri" id="qstart">Start a 5-question quiz</button><div id="qbox" style="margin-top:16px"></div></div></div>
+<div class="pane hide" id="p-study"><div class="pad"><h2>Study tools</h2><p class="muted">Pick a chapter, then get a summary or revision flashcards. Click a card to flip it.</p><select id="sf" aria-label="Chapter"></select> <button id="sum" class="pri">Summarize chapter</button> <button id="fc">Make flashcards</button><div id="sbox" style="margin-top:16px"></div></div></div>
+<div class="pane hide" id="p-insp"><div class="pad"><div id="insp"></div><h3>Retrieval check</h3><p class="muted">Runs 10 test questions and checks whether the right PDF comes back in the top 5 chunks.</p><button id="ev">Run evaluation</button><div id="evo" style="margin-top:12px"></div></div></div>
+</main></section>
+
+<script type="module" src="app.js"></script></body></html>

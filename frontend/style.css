@@ -1,0 +1,82 @@
+:root{color-scheme:light;--paper:#EAF0EE;--ink:#14213D;--mark:#FFD84D;--py:#3776AB;--red:#E4572E;--card:#fff;--line:#c9d6d2}
+:root[data-theme="dark"]{--paper:#0f1a2b;--ink:#e8eef7;--card:#16233a;--line:#26385a;color-scheme:dark}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0f1a2b;--ink:#e8eef7;--card:#16233a;--line:#26385a;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font:17px/1.6 "Source Serif 4",serif;color:var(--ink);background:var(--paper);
+background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:28px 28px}
+h1,h2,button,.tag,label{font-family:"Bricolage Grotesque",sans-serif}
+button{cursor:pointer;border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:.6em 1em;border-radius:8px;font-weight:700;font-size:15px}
+button.pri{background:var(--ink);color:var(--paper)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--py);outline-offset:2px}
+.hide{display:none!important}
+/* login */
+#login{min-height:100%;display:grid;grid-template-columns:1.2fr 1fr}
+.hero{padding:8vh 6vw;display:flex;flex-direction:column;justify-content:center;gap:24px}
+.hero h1{font-size:clamp(40px,6vw,76px);line-height:1;margin:0;font-weight:800;letter-spacing:-.03em}
+.hero h1 mark{background:var(--mark);color:#14213D;padding:0 .15em}
+.demo{background:var(--card);border:2px solid var(--ink);border-radius:10px;padding:18px;max-width:520px;box-shadow:6px 6px 0 var(--ink)}
+.demo code{font:14px "JetBrains Mono",monospace;display:block;background:#14213D;color:#cfe3ff;padding:10px;border-radius:6px;margin-top:8px}
+.demo .src{font:600 13px "Bricolage Grotesque";color:var(--red);margin-top:8px}
+.form{background:var(--card);border-left:2px solid var(--ink);padding:8vh 5vw;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.form h2{margin:0 0 4px;font-size:30px}
+input{width:100%;padding:.7em;border:2px solid var(--ink);border-radius:8px;background:var(--paper);color:var(--ink);font:16px "Source Serif 4"}
+.err{color:var(--red);min-height:1.4em;font-size:15px}
+.sw{background:none;border:0;text-decoration:underline;padding:0;font-weight:600}
+/* app */
+#app{height:100vh;height:100dvh;overflow:hidden;display:grid;grid-template-columns:300px minmax(0,1fr);grid-template-rows:minmax(0,1fr)}
+aside{background:var(--card);border-right:2px solid var(--ink);padding:20px;display:flex;flex-direction:column;gap:14px;overflow:auto}
+aside h1{font-size:24px;margin:0;font-weight:800}
+.shelf{display:flex;flex-direction:column;gap:8px;flex:1}
+.book{border:2px solid var(--ink);border-left:12px solid var(--py);border-radius:6px;padding:8px 10px;font:600 14px "Bricolage Grotesque";word-break:break-all}
+.muted{font-size:14px;opacity:.75}
+main{display:flex;flex-direction:column;height:100%;min-width:0;min-height:0;overflow:hidden}
+#chat{flex:1;overflow:auto;padding:28px min(6vw,60px);display:flex;flex-direction:column;gap:18px}
+.msg{max-width:760px;padding:14px 18px;border:2px solid var(--ink);border-radius:10px;background:var(--card)}
+.msg.u{align-self:flex-end;background:var(--mark);color:#14213D;font-weight:600}
+.msg pre{background:#14213D;color:#cfe3ff;padding:12px;border-radius:6px;overflow:auto;font:14px "JetBrains Mono",monospace}
+.msg code{font-family:"JetBrains Mono",monospace;font-size:.88em}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{border:1.5px solid var(--red);color:var(--red);border-radius:99px;padding:2px 10px;font:600 13px "Bricolage Grotesque"}
+.sug{display:flex;flex-wrap:wrap;gap:8px}
+.sug button{font-weight:600;font-size:14px}
+.ask{display:flex;gap:10px;padding:16px min(6vw,60px);border-top:2px solid var(--ink);background:var(--card)}
+.ask input{flex:1}
+.dots::after{content:"Reading your notes…";opacity:.7;font-style:italic}
+@media(max-width:860px){#login{grid-template-columns:1fr}
+.form{border-left:0;border-top:2px solid var(--ink)}
+#app{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}
+aside{border-right:0;border-bottom:2px solid var(--ink);max-height:38vh}}
+@media(prefers-reduced-motion:no-preference){.hero h1{animation:in .7s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}}
+.tabs{display:flex;flex-direction:column;gap:6px}
+.tabs button{text-align:left}
+.pane{flex:1;display:flex;flex-direction:column;min-height:0}
+.pad{padding:28px min(6vw,60px);overflow:auto;height:100%}
+.ask select{border:2px solid var(--ink);border-radius:8px;background:var(--paper);color:var(--ink);padding:0 8px;font:600 14px "Bricolage Grotesque"}
+.cp{margin-top:10px;font-size:13px;padding:2px 10px}
+.opts{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.opts button{text-align:left}
+.opts .ok{background:#2e9e5b;color:#fff}
+.opts .bad{background:var(--red);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
+.stat{border:2px solid var(--ink);background:var(--card);border-radius:8px;padding:12px;font-size:14px}
+.card{cursor:pointer;min-height:90px}
+.stat b{display:block;font:800 34px "Bricolage Grotesque"}
+.bar{display:grid;grid-template-columns:minmax(120px,200px) 1fr 40px;align-items:center;gap:8px;font-size:14px;margin:4px 0}
+.bar i{height:14px;background:var(--py);border-radius:3px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td,th{border:1.5px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+@media print{aside,.ask,.sug,.cp{display:none!important}
+body{background:#fff;color:#000}
+#app{display:block;height:auto;overflow:visible}
+main,.pane,#chat{display:block;height:auto;overflow:visible}
+.msg{break-inside:avoid}}
+
+/* theme switch */
+#login{position:relative}
+.theme{display:inline-flex;align-self:flex-start;border:2px solid var(--ink);border-radius:8px;overflow:hidden;background:var(--card)}
+.theme button{border:0;border-radius:0;padding:.35em .85em;font-size:13px;background:transparent;color:var(--ink)}
+.theme button+button{border-left:2px solid var(--ink)}
+.theme button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.theme-float{position:absolute;top:16px;right:16px;z-index:5}

@@ -1,0 +1,42 @@
+[
+ {
+  "q": "What are Python variables?",
+  "file": "ch2_variables_datatypes.pdf"
+ },
+ {
+  "q": "Explain the difference between a list and a tuple",
+  "file": "ch2_variables_datatypes.pdf"
+ },
+ {
+  "q": "What data types does Python have?",
+  "file": "ch2_variables_datatypes.pdf"
+ },
+ {
+  "q": "What is a for loop?",
+  "file": "ch4_loops.pdf"
+ },
+ {
+  "q": "How do I stop a while loop early?",
+  "file": "ch4_loops.pdf"
+ },
+ {
+  "q": "How do functions work in Python?",
+  "file": "ch5_functions.pdf"
+ },
+ {
+  "q": "What does return do?",
+  "file": "ch5_functions.pdf"
+ },
+ {
+  "q": "What are conditional statements?",
+  "file": "ch3_conditionals.pdf"
+ },
+ {
+  "q": "When does elif run?",
+  "file": "ch3_conditionals.pdf"
+ },
+ {
+  "q": "How do I run a Python script?",
+  "file": "ch1_intro_python.pdf"
+ }
+]
